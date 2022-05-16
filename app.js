@@ -13,8 +13,7 @@ redirectIfLoggedIn();
 signInForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(signInForm);
-
-    const user = await signInUser(data.get('email', data.get('password')));
+    const user = await signInUser(data.get('email'), data.get('password'));
     if (user) {
         location.replace('/other-page');
     }
